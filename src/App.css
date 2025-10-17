@@ -1,0 +1,395 @@
+/* ====== Base Background ====== */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(120deg, #141e30, #243b55);
+    animation: gradientMove 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Animated gradient */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ====== Game Container ====== */
+.game-container {
+    width: 420px;
+
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    padding-top: 0px;
+}
+
+/* ====== Game Title ====== */
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* ====== Buttons (Keys) ====== */
+.key-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.key-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.key-btn:hover {
+    background: #f39c12;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #f39c12;
+}
+
+/* ====== Game Grid ====== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.tile {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+}
+
+.tile.spawn {
+    animation: spawn 0.3s ease-out;
+}
+
+@keyframes spawn {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ====== Scoreboard ====== */
+.score {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 160px;
+}
+
+.game-container {
+    width: 420px;
+    text-align: center;
+    position: relative;
+}
+
+.game-header {
+    text-align: left;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 0;
+    color: #776e65;
+}
+
+.score-boxes {
+    display: flex;
+    gap: 10px;
+}
+
+.score-box {
+    background: #bbada0;
+    border-radius: 4px;
+    padding: 8px 18px;
+    color: white;
+    text-align: center;
+    min-width: 60px;
+}
+
+.score-box .label {
+    font-size: 12px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.score-box .value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.new-game-btn {
+    background: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.new-game-btn:hover {
+    background: #9c8370;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.board {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+    background: #bbada0;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.cell {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.cell-empty {
+    background: #cdc1b4;
+}
+.cell-2 {
+    background: #eee4da;
+    color: #776e65;
+}
+.cell-4 {
+    background: #ede0c8;
+    color: #776e65;
+}
+.cell-8 {
+    background: #f2b179;
+    color: #f9f6f2;
+}
+.cell-16 {
+    background: #f59563;
+    color: #f9f6f2;
+}
+.cell-32 {
+    background: #f67c5f;
+    color: #f9f6f2;
+}
+.cell-64 {
+    background: #f65e3b;
+    color: #f9f6f2;
+}
+.cell-128 {
+    background: #edcf72;
+    color: #f9f6f2;
+    font-size: 26px;
+}
+.cell-256 {
+    background: #edcc61;
+    color: #f9f6f2;
+    font-size: 26px;
+}
+.cell-512 {
+    background: #edc850;
+    color: #f9f6f2;
+    font-size: 24px;
+}
+.cell-1024 {
+    background: #edc53f;
+    color: #f9f6f2;
+    font-size: 24px;
+}
+.cell-2048 {
+    background: #edc22e;
+    color: #f9f6f2;
+    font-size: 22px;
+}
+.cell-4096 {
+    background: #3c3a32;
+    color: #f9f6f2;
+}
+.cell-8192 {
+    background: #1a1a1a;
+    color: #f9f6f2;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.arrow-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.arrow-btn {
+    background: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.arrow-btn:hover {
+    background: #9c8370;
+}
+
+.overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(238, 228, 218, 0.85);
+    color: #776e65;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+.info-panel {
+    max-width: 300px;
+    background: #f8f5f0;
+    padding: 20px;
+    border-radius: 8px;
+    color: #776e65;
+}
+
+.info-panel h2 {
+    margin-top: 0;
+}
+
+.info-panel ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    body {
+        height: auto;
+    }
+    .page {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+    .game-container {
+        width: 90%;
+    }
+    .cell {
+        height: 75px;
+        font-size: 24px;
+    }
+    .board {
+        gap: 10px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        height: auto;
+    }
+    .page {
+        padding: 10px;
+        gap: 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .cell {
+        height: 60px;
+        font-size: 18px;
+    }
+    .board {
+        gap: 8px;
+        padding: 8px;
+    }
+    .key-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .arrow-btn {
+        padding: 10px 16px;
+        font-size: 18px;
+    }
+    .info-panel {
+        width: 100%;
+        font-size: 14px;
+    }
+}
